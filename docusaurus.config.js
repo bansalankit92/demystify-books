@@ -1,20 +1,20 @@
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
-
+const path = require('path');
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
-  title: 'My Site',
+  title: 'Demystifying Books',
   tagline: 'Dinosaurs are cool',
-  url: 'https://your-docusaurus-test-site.com',
+  url: 'https://demystify.github.io',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'bansalankit92', // Usually your GitHub org/user name.
+  projectName: 'demystify-books', // Usually your repo name.
   themeConfig: {
     navbar: {
-      title: 'My Site',
+      title: 'Demystifying Books',
       logo: {
         alt: 'My Site Logo',
         src: 'img/logo.svg',
@@ -26,7 +26,7 @@ module.exports = {
           position: 'left',
           label: 'Tutorial',
         },
-        {to: '/blog', label: 'Blog', position: 'left'},
+        { to: '/blog', label: 'Blog', position: 'left' },
         {
           href: 'https://github.com/facebook/docusaurus',
           label: 'GitHub',
@@ -82,7 +82,10 @@ module.exports = {
     prism: {
       theme: lightCodeTheme,
       darkTheme: darkCodeTheme,
-    },
+    },   
+      valine: {      
+        appId:"1", appKey:"1"  
+        },  
   },
   presets: [
     [
@@ -105,5 +108,27 @@ module.exports = {
         },
       },
     ],
+  ],
+  plugins: [
+    // function valine(context, options) {
+    //   return {
+    //     name: 'my-plugin',
+    //     injectHtmlTags({ content }) { return { 
+    //       postBodyTags: [`<div id="vcomments"></div>`], 
+    //     }; 
+    //   },
+    // //   async contentLoaded({content, actions}) {    
+    // //       const {createData, addRoute} = actions;      // Create friends.json  
+    // //       var div = content.createElement("div");
+    // //       div.style.width = "100px";
+    // //       div.style.height = "100px";
+    // //       div.style.background = "red";
+    // //       div.style.color = "white";
+    // //       div.innerHTML = "Hello";
+    // //       content.querySelector(".doc-page").appendChild(div)
+    // // },
+    //   }
+    // },
+   // path.resolve(__dirname, './valine'),
   ],
 };

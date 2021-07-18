@@ -31,8 +31,8 @@ export default function Home() {
   new Valine({
     el: '#vcomments',
     // other config
-    appId: '-',
-    appKey: '',
+    appId: 'dcIL7m0GeWDyu5CuYxHTSTSy-MdYXbMMI',
+    appKey: 'ijYNsGG5KyTca7meoJ1L7k6l',
     lang: 'en'
   })
   return (
@@ -43,6 +43,7 @@ export default function Home() {
       <main>
         <HomepageFeatures />
       </main>
+      <div id="vcomments"></div>
     </Layout>
   );
 }
