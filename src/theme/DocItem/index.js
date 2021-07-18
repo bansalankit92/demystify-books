@@ -102,7 +102,7 @@ function DocItem(props) {
             </article>
             <DocPaginator metadata={metadata} />
             <br />
-            <Valine appId={process.env.VAppId} appKey={process.env.VAppKey} lang='en'/>
+            <Valine appId={process.env.VAppId} appKey={process.env.VAppKey} lang="en" avatar="robohash" recordIP />
 
           </div>
         </div>

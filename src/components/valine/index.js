@@ -19,6 +19,7 @@ const Valine = (props) => {
           new RealValine({
             ...props,
             el: _containerRef.current,
+            path:location.pathname,
           })
         })
       }
