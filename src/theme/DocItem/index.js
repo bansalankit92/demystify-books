@@ -4,25 +4,22 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
- import React, { useState, useEffect } from 'react';
- import DocPaginator from '@theme/DocPaginator';
+import React from 'react';
+import DocPaginator from '@theme/DocPaginator';
 import DocVersionBanner from '@theme/DocVersionBanner';
 import Seo from '@theme/Seo';
 import LastUpdated from '@theme/LastUpdated';
 import TOC from '@theme/TOC';
 import EditThisPage from '@theme/EditThisPage';
-import {MainHeading} from '@theme/Heading';
+import { MainHeading } from '@theme/Heading';
 import clsx from 'clsx';
 import styles from './styles.module.css';
-import {useActivePlugin, useVersions} from '@theme/hooks/useDocs';
-import { useLocation, Switch } from 'react-router-dom'; 
+import { useActivePlugin, useVersions } from '@theme/hooks/useDocs';
 import Valine from '../../components/valine';
-import BrowserOnly from '@docusaurus/BrowserOnly';
 
 function DocItem(props) {
-  const location = useLocation();
-  const {content: DocContent, versionMetadata} = props;
-  const {metadata, frontMatter} = DocContent;
+  const { content: DocContent, versionMetadata } = props;
+  const { metadata, frontMatter } = DocContent;
   const {
     image,
     keywords,
@@ -37,7 +34,7 @@ function DocItem(props) {
     formattedLastUpdatedAt,
     lastUpdatedBy,
   } = metadata;
-  const {pluginId} = useActivePlugin({
+  const { pluginId } = useActivePlugin({
     failfast: true,
   });
   const versions = useVersions(pluginId); // If site is not versioned or only one version is included
@@ -46,7 +43,7 @@ function DocItem(props) {
   const showVersionBadge = versions.length > 1; // We only add a title if:
   // - user asks to hide it with frontmatter
   // - the markdown content does not already contain a top-level h1 heading
- 
+
   const shouldAddTitle =
     !hideTitle && typeof DocContent.contentTitle === 'undefined';
   return (
@@ -104,10 +101,9 @@ function DocItem(props) {
               )}
             </article>
             <DocPaginator metadata={metadata} />
-            <br/>
-            <BrowserOnly>
-              <Valine appId={process.env.VAppId} appKey={process.env.VAppKey} lang='en'/>
-            </BrowserOnly>
+            <br />
+            <Valine appId={process.env.VAppId} appKey={process.env.VAppKey} lang='en'/>
+
           </div>
         </div>
         {!hideTableOfContents && DocContent.toc && (
