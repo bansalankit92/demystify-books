@@ -1,6 +1,7 @@
 import isEqual from 'lodash/isEqual'
 import merge from 'lodash/merge'
 import React from 'react'
+import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
 
 /** 使用React包装的Valine评论组件 */
 export default class Valine extends React.Component {
@@ -27,7 +28,7 @@ export default class Valine extends React.Component {
   }
 
   _checkAvailability() {
-    return typeof window !== 'undefined' && !!this._containerRef.current
+    return ExecutionEnvironment.canUseDOM && typeof window !== 'undefined' && !!this._containerRef.current
   }
   async _makeValine() {
     const RealValine = await (await import('valine')).default

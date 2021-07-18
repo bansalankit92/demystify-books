@@ -15,9 +15,9 @@ import {MainHeading} from '@theme/Heading';
 import clsx from 'clsx';
 import styles from './styles.module.css';
 import {useActivePlugin, useVersions} from '@theme/hooks/useDocs';
-//import Valine from 'valine';
 import { useLocation, Switch } from 'react-router-dom'; 
 import Valine from '../../components/valine';
+import BrowserOnly from '@docusaurus/BrowserOnly';
 
 function DocItem(props) {
   const location = useLocation();
@@ -105,7 +105,9 @@ function DocItem(props) {
             </article>
             <DocPaginator metadata={metadata} />
             <br/>
-            <Valine appId={process.env.VAppId} appKey={process.env.VAppKey} lang='en'/>
+            <BrowserOnly>
+              <Valine appId={process.env.VAppId} appKey={process.env.VAppKey} lang='en'/>
+            </BrowserOnly>
           </div>
         </div>
         {!hideTableOfContents && DocContent.toc && (
