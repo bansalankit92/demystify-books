@@ -110,25 +110,11 @@ module.exports = {
     ],
   ],
   plugins: [
-    // function valine(context, options) {
-    //   return {
-    //     name: 'my-plugin',
-    //     injectHtmlTags({ content }) { return { 
-    //       postBodyTags: [`<div id="vcomments"></div>`], 
-    //     }; 
-    //   },
-    // //   async contentLoaded({content, actions}) {    
-    // //       const {createData, addRoute} = actions;      // Create friends.json  
-    // //       var div = content.createElement("div");
-    // //       div.style.width = "100px";
-    // //       div.style.height = "100px";
-    // //       div.style.background = "red";
-    // //       div.style.color = "white";
-    // //       div.innerHTML = "Hello";
-    // //       content.querySelector(".doc-page").appendChild(div)
-    // // },
-    //   }
-    // },
-   // path.resolve(__dirname, './valine'),
+    [
+      "docusaurus2-dotenv",
+      {
+        systemvars: true,
+      },
+    ],
   ],
 };

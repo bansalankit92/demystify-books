@@ -43,39 +43,10 @@ function DocItem(props) {
   const versions = useVersions(pluginId); // If site is not versioned or only one version is included
   // we don't show the version badge
   // See https://github.com/facebook/docusaurus/issues/3362
-
   const showVersionBadge = versions.length > 1; // We only add a title if:
   // - user asks to hide it with frontmatter
   // - the markdown content does not already contain a top-level h1 heading
-  // let elementValue = location.pathname.substring(1);
-  // elementValue = elementValue.replaceAll('/','-')
-  // console.log(elementValue);
-  // const [valineObject, setValineObject] = useState(( <div id={elementValue}></div>))
-  // useEffect(() => {
-  //   //console.log(location.pathname);
-  //   // let elementValue = location.pathname.substring(1);
-  //   // elementValue = elementValue.replaceAll('/','-')
-  //   console.log('inside effect',elementValue);
-  //   setValineObject(( <div id={elementValue}></div>));
-  //   setTimeout(() => {
-  //     //console.log("inside timeout");
-     
-  //   }, 100);
-
-  //   new Valine({
-  //     el: '#'+elementValue,
-  //     // other config
-  //     appId: 'dcIL7m0GeWDyu5CuYxHTSTSy-MdYXbMMI',
-  //     appKey: 'ijYNsGG5KyTca7meoJ1L7k6l',
-  //     lang: 'en'
-  //   })
-
-  //   return () => {
-      
-  //   }
-  // }, [])
-
-  
+ 
   const shouldAddTitle =
     !hideTitle && typeof DocContent.contentTitle === 'undefined';
   return (
@@ -132,14 +103,9 @@ function DocItem(props) {
                 </footer>
               )}
             </article>
-            {/* {valineObject} */}
-            {/* <div id='vcomments'></div> */}
-            1
-            <Valine appId= 'dcIL7m0GeWDyu5CuYxHTSTSy-MdYXbMMI'
-      appKey='ijYNsGG5KyTca7meoJ1L7k6l' />
-
             <DocPaginator metadata={metadata} />
-           
+            <br/>
+            <Valine appId={process.env.VAppId} appKey={process.env.VAppKey} lang='en'/>
           </div>
         </div>
         {!hideTableOfContents && DocContent.toc && (

@@ -28,13 +28,6 @@ function HomepageHeader() {
 
 export default function Home() {
   const { siteConfig } = useDocusaurusContext();
-  new Valine({
-    el: '#vcomments',
-    // other config
-    appId: 'dcIL7m0GeWDyu5CuYxHTSTSy-MdYXbMMI',
-    appKey: 'ijYNsGG5KyTca7meoJ1L7k6l',
-    lang: 'en'
-  })
   return (
     <Layout
       title={`Hello from ${siteConfig.title}`}
@@ -43,7 +36,6 @@ export default function Home() {
       <main>
         <HomepageFeatures />
       </main>
-      <div id="vcomments"></div>
     </Layout>
   );
 }
