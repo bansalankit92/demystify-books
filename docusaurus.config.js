@@ -21,10 +21,22 @@ module.exports = {
       },
       items: [
         {
-          type: 'doc',
-          docId: 'sant-kabir',
+          to: '/kabir-mansoor/intro',
           position: 'left',
-          label: 'Sant Kabir',
+          label: 'Kabir Mansoor',
+          activeBaseRegex: 'kabir-mansoor',
+        },
+        {
+          to: '/kabir-geeta/intro',
+          position: 'left',
+          label: 'Kabir Geeta',
+          activeBaseRegex: 'kabir-geeta',
+        },
+        {
+          to: '/kabir-sagar/intro',
+          position: 'left',
+          label: 'Kabir Sagar',
+          activeBaseRegex: 'kabir-sagar',
         },
         { to: '/blog', label: 'Blog', position: 'left' },
         {
@@ -41,8 +53,8 @@ module.exports = {
           title: 'Docs',
           items: [
             {
-              label: 'Sant Kabir',
-              to: '/docs/sant-kabir',
+              label: 'Kabir Geeta',
+              to: '/kabir-geeta/intro',
             },
           ],
         },
@@ -91,14 +103,15 @@ module.exports = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
+          routeBasePath: '/',
           editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/',
+            'https://github.com/bansalankit92/demystify-books/edit/master/docs/',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/blog/',
+            'https://github.com/bansalankit92/demystify-books/edit/master/blog/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),

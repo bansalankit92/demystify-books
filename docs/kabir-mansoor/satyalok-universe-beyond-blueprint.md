@@ -8,9 +8,9 @@ sidebar_position: 2
 Details of all worlds/universe including Satyalok on page 246  
 
 **Read Bottom to top**
-![Blueprint of SatyaLok and Universe](../static/img/kabirmansoor/satyalok-blueprint-page-2.png)
+![Blueprint of SatyaLok and Universe](../../static/img/kabirmansoor/satyalok-blueprint-page-2.png)
 **Translated in English**
-![Blueprint of SatyaLok and Universe](../static/img/kabirmansoor/Blueprint-Satyalok-Universe-1.jpg)
+![Blueprint of SatyaLok and Universe](../../static/img/kabirmansoor/Blueprint-Satyalok-Universe-1.jpg)
 
 ### Explanantions
 
